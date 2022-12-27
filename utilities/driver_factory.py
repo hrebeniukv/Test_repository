@@ -22,6 +22,8 @@ class DriverFactory:
             if is_headless:
                 chrome_options.add_argument("--headless")
                 chrome_options.add_argument("--no-sandbox")
+                chrome_options.add_argument('--disable-dev-shm-usage')
+                chrome_options.add_argument("--window-size=1920x1080")
             driver = Chrome(service=Chrome_Service(ChromeDriverManager().install()), options=chrome_options)
 
         elif int(driver_id) == DriverFactory.FIREFOX:

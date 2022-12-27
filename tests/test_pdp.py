@@ -31,12 +31,12 @@ def test_add_to_compare(open_pdp):
     assert pdp.is_visible_compare_product_link() is True, 'The compare products link is not visible'
 
 
-@pytest.mark.sanity
-def test_add_to_cart(open_pdp):
-    pdp = open_pdp
-    pdp.set_size()
-    pdp.set_color()
-    pdp.set_qty().click_add_to_cart_button()
-    actual_qty = pdp.open_minicart().get_qty()
-    set_qty = pdp.get_set_qty()
-    assert pdp.is_correct_qty(set_qty, actual_qty) is True, 'The product hasn\'t been added to the cart'
+# @pytest.mark.sanity
+# def test_add_to_cart(open_pdp):
+#     pdp = open_pdp
+#     pdp.set_size()
+#     pdp.set_color()
+#     pdp.set_qty().click_add_to_cart_button()
+#     actual_qty = pdp.open_minicart().get_qty()
+#     set_qty = pdp.get_set_qty()
+#     assert pdp.is_correct_qty(set_qty, actual_qty) is True, 'The product hasn\'t been added to the cart'
